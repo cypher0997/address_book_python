@@ -1,23 +1,17 @@
 class ContactPerson:
 
-    def __init__(self, first_name, last_name, address, city, state, postal_zip, phone_number):
+    def __init__(self, neo_cp_in_detail):
         """
-        creates details for an contact_person
-        :param first_name: describes first_name of contact person
-        :param last_name: describes last_name of contact person
-        :param address: describes address of contact person
-        :param city: describes city of contact person
-        :param state: describes state of contact person
-        :param postal_zip: describes zip code of contact person
-        :param phone_number: describes phone number of contact person
+
+        :param neo_cp_in_detail:
         """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.address = address
-        self.city = city
-        self.state = state
-        self.postal_zip = postal_zip
-        self.phone_number = phone_number
+        self.first_name = neo_cp_in_detail.get('1')
+        self.last_name = neo_cp_in_detail.get('2')
+        self.address = neo_cp_in_detail.get('3')
+        self.city = neo_cp_in_detail.get('4')
+        self.state = neo_cp_in_detail.get('5')
+        self.postal_zip = neo_cp_in_detail.get('6')
+        self.phone_number = neo_cp_in_detail.get('7')
 
     def returns_contact_person(self):
         """

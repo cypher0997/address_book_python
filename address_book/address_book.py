@@ -23,7 +23,9 @@ class AddressBook:
         state = input("enter the state name : ")
         postal_zip = input("enter the zip code : ")
         phone_number = input("enter the phone number : ")
-        cp_in_detail = (first_name, last_name, address, city, state, postal_zip, phone_number)
+        cp_in_detail = {
+            '1': first_name, '2': last_name, '3': address, '4': city, '5': state, '6': postal_zip, '7': phone_number
+        }
         return cp_in_detail
 
     def creates_and_returns_address_book(self):
@@ -35,9 +37,7 @@ class AddressBook:
         num_cp = self.input_for_number_of_contact_person()
         for i in range(0, num_cp):
             neo_cp_in_detail = self.retuns_input_contact_person_details()
-            cp_ob = ContactPerson(neo_cp_in_detail[0], neo_cp_in_detail[1], neo_cp_in_detail[2],
-                                  neo_cp_in_detail[3], neo_cp_in_detail[4], neo_cp_in_detail[5],
-                                  neo_cp_in_detail[6],)
+            cp_ob = ContactPerson(neo_cp_in_detail)
             address_book.update({'contact_person_'+str(i): cp_ob.returns_contact_person()})
         return address_book
 
