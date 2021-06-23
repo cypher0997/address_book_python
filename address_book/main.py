@@ -19,7 +19,7 @@ def main():
             break
         choice = {1: util_ob.add_contact_person, 2: util_ob.edit_contact_person, 3: util_ob.show_address_book,
                   4: util_ob.delete_contact_person, 5: service_ob.view_person_by_city_state,
-                  6: service_ob.sort_persons_by_first_name}
+                  6: service_ob.sort_persons_by_first_name_or_city_or_state}
         choice.get(action)(neo_temp)
         print(" ")
 
