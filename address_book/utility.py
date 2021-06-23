@@ -19,7 +19,7 @@ class Utility:
         return self.adb
 
     def add_contact_person(self, adb):
-        count = len(adb)
+        count = len(adb)-1
         self.ab_ob.add_new_contacts_to_address_book(count, adb)
         
 
@@ -50,11 +50,10 @@ class Utility:
         simply prints all contact person in address book
         :return: pass
         """
-        print(adb)
-        # for i in adb:
-        #     neo_i = adb.get(i)
-        #     print(" ")
-        #     print("contact_person" + " : " + i)
-        #     for j in neo_i:
-        #         print(j + " : " + neo_i.get(j))
-        # print("its done")
+        for i in adb:
+            neo_i = adb.get(i)
+            print(" ")
+            print("contact_person" + " : " + i)
+            for j in neo_i:
+                print(j + " : " + neo_i.get(j))
+        print("its done")

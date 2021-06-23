@@ -16,7 +16,6 @@ class AddressBook:
         if len(ck_f_name) == 0:
             return self.checked_first_name
         for i in ck_f_name:
-            print(self.checked_first_name)
             if ck_f_name.get(i)['first_name'] == self.checked_first_name:
                 print("name already taken, enter another name")
                 self.check_return_first_name(ck_f_name)
@@ -55,6 +54,7 @@ class AddressBook:
     def add_new_contacts_to_address_book(self, start, take):
         num_cp = self.input_for_number_of_contact_person()
         for i in range(0, num_cp):
+            start += 1
             neo_cp_in_detail = self.returns_input_contact_person_details(take)
             cp_ob = ContactPerson(neo_cp_in_detail)
             take.update({'contact_person_' + str(start): cp_ob.returns_contact_person()})
