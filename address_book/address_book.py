@@ -33,6 +33,7 @@ class AddressBook:
         state = input("enter the state name : ")
         postal_zip = input("enter the zip code : ")
         phone_number = input("enter the phone number : ")
+        print(" ")
         cp_in_detail = {
             '1': first_name, '2': last_name, '3': address, '4': city, '5': state, '6': postal_zip, '7': phone_number
         }

@@ -13,11 +13,13 @@ def main():
     neo_temp = util_ob.create_address_book()
     while True:
         action = int(input('1 to add person, 2 editPerson, 3 print address book, 4 delete person,'+
-                           '5 to search person by city or state'))
-        if action == 6:
+                           '\n'+'5 to search person by city or state, 6 to sort address book'+
+                           '\n'+'7 to quit'))
+        if action == 7:
             break
         choice = {1: util_ob.add_contact_person, 2: util_ob.edit_contact_person, 3: util_ob.show_address_book,
-                  4: util_ob.delete_contact_person, 5: service_ob.view_person_by_city_state}
+                  4: util_ob.delete_contact_person, 5: service_ob.view_person_by_city_state,
+                  6: service_ob.sort_persons_by_first_name}
         choice.get(action)(neo_temp)
         print(" ")
 
