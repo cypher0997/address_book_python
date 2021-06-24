@@ -1,4 +1,8 @@
+import json
+
+
 class Services:
+
     def view_person_by_city_state(self, adb):
         """
         it prints number of persons and their detail on bases of city or state input
@@ -32,3 +36,22 @@ class Services:
             print("contact_person" + " : " + i)
             for j in neo_i:
                 print(j + " : " + neo_i.get(j))
+
+    def write_data_to_json(self, adb):
+        """
+        writes data to json file in json format
+        :param adb: the date as address book to be written
+        :return: pass
+        """
+        with open('data.json', 'w') as write_file:
+            json.dump(adb, write_file, indent=4)
+
+    def read_data_from_json(self, adb):
+        """
+        reads data from json file
+        :param adb: not used here ...
+        :return: pass
+        """
+        file_to_read = open('data.json', 'r')
+        data = json.load(file_to_read)
+        print(data)
