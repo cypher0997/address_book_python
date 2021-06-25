@@ -1,3 +1,4 @@
+# this is contact person class, which contains method that create a dictionary of contact person details
 class ContactPerson:
 
     def __init__(self, neo_cp_in_detail):
